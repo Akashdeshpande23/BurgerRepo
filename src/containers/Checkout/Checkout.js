@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
-
 import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
+import { Route } from "react-router-dom";
 import ContactData from "./ContactData/ContactData";
 
 class Checkout extends Component {
@@ -23,6 +22,7 @@ class Checkout extends Component {
     }
     this.setState({ ingredients: ingredients, totalPrice: price });
   }
+
   checkoutCancelledHandler = () => {
     this.props.history.goBack();
   };
@@ -44,7 +44,7 @@ class Checkout extends Component {
           render={(props) => (
             <ContactData
               ingredients={this.state.ingredients}
-              price={this.state.price}
+              price={this.state.totalPrice}
               {...props}
             />
           )}
